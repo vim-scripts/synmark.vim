@@ -25,8 +25,7 @@ See |add-local-help| for the installation of this file
 1. Introduction                                 *synmark-introduction*
 
 The typical scenario for using this plugin is this: You have another plugin
-that displays some text in a vim buffer (for example, a man page viewer, or a
-web browser - which was my motivation). You also want to highlight some parts
+that displays some text in a vim buffer. You also want to highlight some parts
 of this text (eg, some text should appear emphasized). These parts are known
 to you by their location, but are not distinguished by any textual
 characterisitcs. Normally, you would need to insert some special text to

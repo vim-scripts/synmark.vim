@@ -1,6 +1,6 @@
 " File Name: synmark.vim
 " Maintainer: Moshe Kaminsky
-" Last Update: November 13, 2004
+" Last Modified: Mon 22 Nov 2004 09:37:37 AM IST
 
 "=pod
 "
@@ -45,7 +45,7 @@
 if exists('g:synmark_version') || &compatible
   finish
 endif
-let g:synmark_version=0.1
+let g:synmark_version=0.2
 
 " convert a character position to a byte position in the given line.
 function! Char2Byte(line, char)
@@ -121,6 +121,9 @@ endfunction
 command -bang -bar -nargs=+ SynMarkEnd call s:SynMarkEnd(<q-bang>,<f-args>)
 
 function! s:SynMarkEnd(bang, name,...)
+  if ! exists('s:line_' . a:name)
+    return
+  endif
   if ! exists('s:command_' . a:name)
     call s:SynMarkDef(a:name)
   endif
